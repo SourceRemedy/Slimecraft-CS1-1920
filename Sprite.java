@@ -11,9 +11,9 @@ import java.awt.Rectangle;
 
 /**
  *
- * @author jword
+ * @author 734260
  */
-public abstract class Sprite {
+public abstract class Sprite{
     private int speed;
     private int x, y, vx, vy;
     private int width, height;
@@ -24,8 +24,8 @@ public abstract class Sprite {
         this.speed = speed;
         this.x = x;
         this.y = y;
-        this.vx = (int) (Math.random() * this.speed);
-        this.vy = (int) (Math.random() * this.speed);
+        this.vx = (int) (Math.random() * this.speed * 2 - this.speed);
+        this.vy = (int) (Math.random() * this.speed * 2 - this.speed);
         this.width = width;
         this.height = height;
         this.color = color;
@@ -40,16 +40,16 @@ public abstract class Sprite {
     
     public abstract void draw(Graphics g);
 
-    public int getWidth() {
-        return width;
-    }    
-
     public int getX() {
         return x;
     }
 
     public int getY() {
         return y;
+    }
+
+    public int getWidth() {
+        return width;
     }
 
     public int getHeight() {
@@ -60,7 +60,20 @@ public abstract class Sprite {
         return color;
     }
     
-    public boolean collide(Sprite other) {
-        return this.bounds.intersects(other.bounds);
+    
+    
+    public void collide(Sprite other) {
+        if (this.bounds.intersects(other.bounds)){
+            this.didCollide();
+            other.didCollide();
+        }
     }
+    
+    public void didCollide() {
+        this.vx = -this.vx;
+        this.vy = -this.vy;
+    }
+    
+    
+    
 }

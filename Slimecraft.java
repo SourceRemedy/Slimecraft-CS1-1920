@@ -9,17 +9,18 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JFrame;
 
+
 /**
  *
- * @author jword
+ * @author 734260
  */
-public class Slimecraft extends JFrame  {
+public class Slimecraft extends JFrame{
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        JFrame j = new Slimecraft();
+         JFrame j = new Slimecraft();
         World c = new World();
         j.add(c);
         j.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

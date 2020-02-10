@@ -9,15 +9,13 @@ import java.awt.Color;
 
 /**
  *
- * @author jword
+ * @author 734260
  */
-public class Blob extends Slime {
-    private static final int SPEED = 5;
-    private static final Color COLOR = Color.BLUE;
+public class Blob extends Slime{
+     private static final int SPEED = 5;
+     private static final Color COLOR = Color.BLUE;
         
     public Blob(int x, int y) {
         super(SPEED, x, y, COLOR);
     }  
-    
-    
 }
